@@ -60,5 +60,3 @@ typings/
 # Data directory
 data/
 
-# Configuration file
-config.js
