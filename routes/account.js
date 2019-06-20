@@ -99,14 +99,14 @@ router.get('/:account', function(req, res, next) {
     data.tracesReceived = tracesReceived;
     
     var blocks = {};
-    data.tracesSent.forEach(function(trace) {
+    (data.tracesSent || []).forEach(function(trace) {
       if (!blocks[trace.blockNumber]) {
         blocks[trace.blockNumber] = [];
       }
       
       blocks[trace.blockNumber].push(trace);
     });
-    data.tracesReceived.forEach(function(trace) {
+    (data.tracesReceived || []).forEach(function(trace) {
       if (!blocks[trace.blockNumber]) {
         blocks[trace.blockNumber] = [];
       }
